@@ -42,5 +42,5 @@ git reset --hard origin/"${INPUT_PR_BRANCH}"
 git cherry-pick --ff "${GITHUB_SHA}"
 git config -l
 git status
-git push -u origin "${PR_BRANCH}"
-hub pull-request -b "${INPUT_PR_BRANCH}" -h "${PR_BRANCH}" -l "${INPUT_PR_LABELS}" -a "${GITHUB_ACTOR}" -m "\"AUTO: ${PR_TITLE}\""
+#git push -u origin "${PR_BRANCH}"
+#hub pull-request -b "${INPUT_PR_BRANCH}" -h "${PR_BRANCH}" -l "${INPUT_PR_LABELS}" -a "${GITHUB_ACTOR}" -m "\"AUTO: ${PR_TITLE}\""
