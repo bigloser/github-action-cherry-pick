@@ -30,8 +30,8 @@ fi
 
 PR_TITLE=$(git log -1 --format="%s" $GITHUB_SHA)
 
-#git remote update
-#git fetch --all
+git remote update
+git fetch --all
 git checkout -b "${PR_BRANCH}" origin/"${INPUT_PR_BRANCH}"
 git log -n 2
 git status
