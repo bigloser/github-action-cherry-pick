@@ -13,20 +13,12 @@ git_setup() {
 EOF
   chmod 600 $HOME/.netrc
 
+  git config --global --add safe.directory /github/workspace
   git config --global user.email "$GITBOT_EMAIL"
   git config --global user.name "$GITHUB_ACTOR"
-  git config --global --add safe.directory /github/workspace
 }
 
 git_setup
-
-git_cmd() {
-  if [[ "${DRY_RUN:-false}" == "true" ]]; then
-    echo $@
-  else
-    eval $@
-  fi
-}
 
 PR_BRANCH="auto-$INPUT_PR_BRANCH-$GITHUB_SHA"
 MESSAGE=$(git log -1 $GITHUB_SHA | grep "AUTO" | wc -l)
