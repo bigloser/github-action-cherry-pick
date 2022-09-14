@@ -36,6 +36,7 @@ git checkout -b "${PR_BRANCH}" origin/"${INPUT_PR_BRANCH}"
 git log -n 2
 git status
 git --version
+git diff "${GITHUB_SHA}"
 git cherry-pick -n --allow-empty --keep-redundant-commits "${GITHUB_SHA}"
 git status
 git push -u origin "${PR_BRANCH}"
