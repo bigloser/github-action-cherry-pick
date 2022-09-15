@@ -39,7 +39,7 @@ git --version
 git diff "${GITHUB_SHA}"
 git clean -fdx
 git reset --hard origin/"${INPUT_PR_BRANCH}"
-#git cherry-pick --ff "${GITHUB_SHA}"
+git cherry-pick -m 1 --strategy=recursive --strategy-option=theirs "${GITHUB_SHA}"
 #git config -l
 #git status
 #git push -u origin "${PR_BRANCH}"
